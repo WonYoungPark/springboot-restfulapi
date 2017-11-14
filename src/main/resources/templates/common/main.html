@@ -1,0 +1,43 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="common/layout">
+
+<!-- 사용자 CSS 추가 -->
+<th:block layout:fragment="css">
+</th:block>
+
+<!-- 사용자 스크립트 추가 -->
+<th:block layout:fragment="script">
+</th:block>
+
+<!-- 사용자 자바스크립트 추가 -->
+<th:block layout:fragment="javascript">
+    <script type="text/javascript">
+            $(document.body).ready(function () {
+                    var toast = new ax5.ui.toast();
+                    toast.setConfig({
+                            icon: '<i class="fa fa-bell"></i>',
+                            containerPosition: "top-right",
+                            closeIcon: '<i class="fa fa-times"></i>'
+                    });
+
+                    $('button[data-toast]').click(function () {
+                            var theme = this.getAttribute("data-toast");
+                            toast.push({
+                                    theme: theme,
+                                    msg: theme + ' color'
+                            }, function () {
+                                    console.log(this);
+                            });
+                    });
+            });
+    </script>
+</th:block>
+<!-- 사용자 Content -->>
+<div layout:fragment="content">
+        <button type="button" data-toast="default" class="btn btn-default" id="toast-default-open">toast-default-open</button>
+        <button type="button" data-toast="primary" class="btn btn-primary" id="toast-primary-open">toast-primary-open</button>
+        <button type="button" data-toast="success" class="btn btn-success" id="toast-success-open">toast-success-open</button>
+        main content1232
+</div>
+</html>

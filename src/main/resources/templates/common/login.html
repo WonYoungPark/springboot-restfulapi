@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>INSPINIA | Login</title>
+    <!-- CSS -->
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.5/css/bootstrap.min.css" th:href="@{/webjars/bootstrap/3.3.5/dist/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/font-awesome/css/font-awesome.css" th:href="@{/font-awesome/css/font-awesome.css}" rel="stylesheet" media="screen"/>
+
+    <link href="../../static/css/animate.css" th:href="@{/css/animate.css}" rel="stylesheet" media="screen"/>
+    <link href="../../static/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" media="screen"/>
+
+    <!--<link href="/static/css/animate.css" rel="stylesheet" type="text/css"/>-->
+    <!--<link href="/static/css/style.css" rel="stylesheet" type="text/css"/>-->
+
+    <script src="../../static/js/jquery-2.1.1.js" th:src="@{/js/jquery-2.1.1.js}"></script>
+</head>
+<script type="text/javascript">
+    $(document.body).ready(function () {
+//        var mask = new ax5.ui.mask();
+//        $('#mask-open').click(function () {
+//            mask.open();
+//
+//            setTimeout(function () {
+//                mask.close();
+//            }, 2000);
+//        });
+
+        $('#inputUserName').val("admin@gmail.com");
+        $('#inputPassword').val("1234"           );
+
+        //$('#formLoginInfo').submit();
+
+    });
+</script>
+<body class="gray-bg">
+
+<div class="middle-box text-center loginscreen animated fadeInDown">
+    <div>
+        <div>
+            <h1 class="logo-name">IN+</h1>
+
+        </div>
+        <h3>Welcome to IN+</h3>
+        <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+            <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
+        </p>
+        <p>Login in. To see it in action.</p>
+        <form id="formLoginInfo" class="m-t" action="/login" method="post" role="form">
+            <div class="form-group">
+                <input type="email" id="inputUserName" name="username" class="form-control" placeholder="Username" required=""/>
+            </div>
+            <div class="form-group">
+                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required=""/>
+            </div>
+            <button type="submit" id="btnLogin" class="btn btn-primary block full-width m-b">Login</button>
+
+            <a href="#"><small>Forgot password?</small></a>
+            <p class="text-muted text-center"><small>Do not have an account?</small></p>
+            <a class="btn btn-sm btn-white btn-block" href="/register">Create an account</a>
+        </form>
+        <p class="m-t"> <small>Inspinia we app framework base on Bootstrap 3 &copy; 2014</small> </p>
+    </div>
+</div>
+
+<!-- Mainly scripts -->
+<!--<script src="/js/jquery-2.1.1.js"></script>-->
+<!--<script src="/js/bootstrap.min.js"></script>-->
+
+</body>
+</html>
